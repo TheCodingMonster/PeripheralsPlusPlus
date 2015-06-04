@@ -1,6 +1,5 @@
 package com.austinv11.peripheralsplusplus.items;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import net.minecraft.block.Block;
@@ -14,7 +13,6 @@ import com.austinv11.peripheralsplusplus.blocks.BlockAnalyzer;
 import com.austinv11.peripheralsplusplus.blocks.BlockPPP;
 
 import cpw.mods.fml.common.Optional;
-import cpw.mods.fml.common.registry.GameRegistry;
 import dan200.computercraft.api.peripheral.IPeripheral;
 import dan200.computercraft.api.peripheral.IPeripheralProvider;
 import forestry.api.storage.IBackpackDefinition;
@@ -22,7 +20,6 @@ import forestry.api.storage.IBackpackDefinition;
 @Optional.InterfaceList(value = { @Optional.Interface(modid = ModIds.Forestry, iface = "forestry.api.storage.IBackpackDefinition", striprefs = true) })
 public class ItemComputerEngineerBackpack extends ItemPPP implements
 		IBackpackDefinition {
-	
 
 	public ItemComputerEngineerBackpack() {
 	}
@@ -34,8 +31,7 @@ public class ItemComputerEngineerBackpack extends ItemPPP implements
 
 	@Override
 	public String getName(ItemStack backpack) {
-		return StatCollector
-				.translateToLocal("peripheralsplusplus.forestry.computer");
+			return	StatCollector.translateToLocal("peripheralsplusplus.forestry.computer");
 	}
 
 	@Override
@@ -67,14 +63,13 @@ public class ItemComputerEngineerBackpack extends ItemPPP implements
 	}
 
 	@Override
-	public String getName() {
-		return StatCollector
-				.translateToLocal("peripheralsplusplus.forestry.computer");
+	public boolean isValidItem(ItemStack itemstack) {
+		return isValidItem(null, itemstack);
 	}
 
 	@Override
-	public boolean isValidItem(ItemStack itemstack) {
-		return isValidItem(null, itemstack);
+	public String getName() {
+		return getName(null);
 	}
 
 }

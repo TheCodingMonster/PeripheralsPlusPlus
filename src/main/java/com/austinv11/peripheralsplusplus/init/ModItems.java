@@ -55,25 +55,26 @@ public class ModItems {
 
 	public static void init() {
 		if (Loader.isModLoaded(ModIds.Forestry)) {
+			ItemComputerEngineerBackpack backpack = new ItemComputerEngineerBackpack();
 			backpack1 = BackpackManager.backpackInterface.addBackpack(
-					new ItemComputerEngineerBackpack(), EnumBackpackType.T1);
+					backpack, EnumBackpackType.T1);
 			backpack2 = BackpackManager.backpackInterface.addBackpack(
-					new ItemComputerEngineerBackpack(), EnumBackpackType.T2);
+					backpack, EnumBackpackType.T2);
 
-			GameRegistry.registerItem(backpack1, "computerEngineerBackpackT1");
-			GameRegistry.registerItem(backpack2, "computerEngineerBackpackT2");
+			GameRegistry.registerItem(backpack1, "computerEngineerBackpack1");
+			GameRegistry.registerItem(backpack2, "computerEngineerBackpack2");
+			
+			GameRegistry.registerCustomItemStack("computerEngineerBackpack1", new ItemStack(backpack1));
+			GameRegistry.registerCustomItemStack("computerEngineerBackpack2", new ItemStack(backpack2));
 
-			Item disk = GameRegistry.findItem("ComputerCraft", "disk");
+			Item disk = GameRegistry.findItem(ModIds.ComputerCraft, "disk");
 
-			GameRegistry.addRecipe(new ShapedOreRecipe(ModItems.backpack1,
-					"sws", "dcd", "sws", 's', Items.string, 'w', Blocks.wool,
-					'd', disk));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(
 					ModItems.backpack1), "SWS", "DCD", "SWS", 'S',
 					Items.string, 'W', Blocks.wool, 'D', disk, 'C',
 					Blocks.chest));
 			ItemStack silkStack = new ItemStack(GameRegistry.findItem(
-					"Forestry", "craftingMaterial"), 1, 3);
+					ModIds.Forestry, "craftingMaterial"), 1, 3);
 			RecipeManagers.carpenterManager.addRecipe(30, new FluidStack(
 					FluidRegistry.WATER, 1000), null, new ItemStack(
 					ModItems.backpack2), "SDS", "SBS", "SSS", 'S', silkStack,
