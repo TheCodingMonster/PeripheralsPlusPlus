@@ -23,27 +23,8 @@ import forestry.api.storage.IBackpackDefinition;
 public class ItemComputerEngineerBackpack extends ItemPPP implements
 		IBackpackDefinition {
 	
-	LinkedList<ItemStack> validItemsExtra = new LinkedList<ItemStack>();
 
 	public ItemComputerEngineerBackpack() {
-		Block computerBase = GameRegistry.findBlock(ModIds.ComputerCraft, "CC-Computer");
-		Block commandComputer = GameRegistry.findBlock(ModIds.ComputerCraft, "command_computer");
-		Block peripheralBase = GameRegistry.findBlock(ModIds.ComputerCraft, "CC-Peripheral");
-		Block turtleBase = GameRegistry.findBlock(ModIds.ComputerCraft, "CC-turtle");
-		Item diskColored = GameRegistry.findItem(ModIds.ComputerCraft, "diskExpanded");
-		Item disk = GameRegistry.findItem(ModIds.ComputerCraft, "disk");
-		Item printedPage = GameRegistry.findItem(ModIds.ComputerCraft, "printout");
-		Item pocket = GameRegistry.findItem(ModIds.ComputerCraft, "pocketComputer");
-		validItemsExtra.add(new ItemStack(computerBase));
-		validItemsExtra.add(new ItemStack(commandComputer));
-		validItemsExtra.add(new ItemStack(peripheralBase));
-		validItemsExtra.add(new ItemStack(turtleBase));
-		validItemsExtra.add(new ItemStack(disk));
-		validItemsExtra.add(new ItemStack(diskColored));
-		validItemsExtra.add(new ItemStack(printedPage));
-		validItemsExtra.add(new ItemStack(pocket));
-
-
 	}
 
 	@Override
@@ -79,10 +60,6 @@ public class ItemComputerEngineerBackpack extends ItemPPP implements
 	public boolean isValidItem(EntityPlayer player, ItemStack itemstack) {
 		Item item = itemstack.getItem();
 		Block block = Block.getBlockFromItem(item);
-		for (ItemStack stack : validItemsExtra) {
-			Item stack2 = stack.getItem();
-			if (stack2.equals(item)) return true;
-		}
 		return item instanceof ItemPPP | item instanceof ItemSmartHelmet
 				| block instanceof BlockPPP | block instanceof BlockAnalyzer
 				| block instanceof IPeripheralProvider
