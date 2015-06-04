@@ -80,7 +80,8 @@ public class ItemComputerEngineerBackpack extends ItemPPP implements
 		Item item = itemstack.getItem();
 		Block block = Block.getBlockFromItem(item);
 		for (ItemStack stack : validItemsExtra) {
-			if (stack.getItem().equals(itemstack.getItem())) return true;
+			Item stack2 = stack.getItem();
+			if (stack2.equals(item)) return true;
 		}
 		return item instanceof ItemPPP | item instanceof ItemSmartHelmet
 				| block instanceof BlockPPP | block instanceof BlockAnalyzer
