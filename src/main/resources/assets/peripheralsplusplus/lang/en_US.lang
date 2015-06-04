@@ -108,3 +108,6 @@ death.attack.peripheralsplusplus.nanobot=%1$s was destroyed from the inside out 
 
 #NEI
 peripheralsplusplus.nei.turtleRecipeHandler.name=Turtles
+
+#Backpacks
+peripheralsplusplus.forestry.computer=Computer Engineer's Backpack

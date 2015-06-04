@@ -24,3 +24,20 @@
 ## Misc
 /src/main/resources/doc
 /src/main/resources/reference
+usernamecache.json
+
+# Minecraft
+MinecraftForge-Credits.txt
+MinecraftForge-License.txt
+README.txt
+asm/
+config/
+crash-reports/
+forge-1.7.10-10.13.2.1291-changelog.txt
+forgeSrc.zip
+gitRepo
+logs/
+mods/
+options.txt
+saves/
+

@@ -6,9 +6,8 @@
 package forestry.api.mail;
 
 import com.mojang.authlib.GameProfile;
+
 import forestry.api.core.INBTTagable;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.World;
 
 public interface IMailAddress extends INBTTagable {
 
@@ -20,6 +19,5 @@ public interface IMailAddress extends INBTTagable {
 	boolean isPlayer();
 	boolean isTrader();
 
-	boolean isClientPlayer(World world);
 	GameProfile getPlayerProfile();
 }
